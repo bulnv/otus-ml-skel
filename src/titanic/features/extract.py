@@ -1,9 +1,11 @@
+"""Module providing a extract."""
 import pandas
 
 __all__ = ["family_size", "is_alone"]
 
 
 def family_size(df: pandas.DataFrame) -> pandas.Series:
+    """Function doing some data satanist stuff."""
     return (
         df[["SibSp", "Parch"]]
         .apply(lambda row: row.SibSp + row.Parch + 1, axis=1)
@@ -12,6 +14,7 @@ def family_size(df: pandas.DataFrame) -> pandas.Series:
 
 
 def is_alone(df: pandas.DataFrame) -> pandas.Series:
+    """Function doing some data satanist stuff."""
     return (
         df[["SibSp", "Parch"]]
         .apply(lambda row: row.SibSp == 0 and row.Parch == 0, axis=1)
@@ -20,4 +23,4 @@ def is_alone(df: pandas.DataFrame) -> pandas.Series:
 
 
 def test_func():
-    pass
+    """Function doing some data satanist stuff."""

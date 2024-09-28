@@ -1,3 +1,4 @@
+"""Module providing a validation."""
 from typing import Tuple
 
 import pandas
@@ -9,6 +10,7 @@ __all__ = ["train_test_split"]
 def train_test_split(
     df: pandas.DataFrame, test_size: float = 0.3, random_state: int = 42
 ) -> Tuple[pandas.DataFrame, pandas.DataFrame]:
+    """Function doing some data satanist stuff."""
     train_idxs, test_idxs = sklean_train_test_split(
         df.index, test_size=test_size, random_state=random_state
     )
